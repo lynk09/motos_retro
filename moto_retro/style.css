@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  background: #202020;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.game-pantalla {
+  position: relative;
+  width: min(100%, 1100px);
+  aspect-ratio: 977 / 768;
+  min-height: 560px;
+  overflow: hidden;
+  border: 1px solid #111;
+  background: linear-gradient(
+    to bottom,
+    #8bbce0 0%,
+    #8bbce0 74.1%,
+    #69c58e 74.1%,
+    #69c58e 90%,
+    #202020 90%,
+    #202020 100%
+  );
+}
+
+
+.marcadores {
+  position: absolute;
+  z-index: 5;
+  top: 3.2%;
+  left: 4.5%;
+  right: 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #050505;
+  font-size: clamp(17px, 3.6vw, 36px);
+  font-weight: 900;
+}
+
+.time {
+  margin-right: 0.5%;
+}
+
+/* Título */
+.game-titulo {
+  position: absolute;
+  z-index: 4;
+  top: 10.8%;
+  left: 29.7%;
+  width: 46%;
+  color: #000;
+  text-align: center;
+  font-weight: 900;
+}
+
+.title-main {
+  height: 28.2%;
+  min-height: 150px;
+  padding: 3% 2% 0;
+  border-radius: 42px;
+  background: #e6e5a0;
+  box-shadow: 0 2px 3px #7e865d;
+  text-align: left;
+}
+
+.title-small {
+  display: block;
+  margin-left: 1%;
+  font-size: clamp(27px, 6.7vw, 68px);
+  line-height: 0.85;
+}
+
+.title-main h1 {
+  font-size: clamp(60px, 14vw, 140px);
+  line-height: 0.92;
+  letter-spacing: -7px;
+}
+
+.title-sub {
+  margin: 2% 0 0 1%;
+  padding: 0 3% 1%;
+  border-radius: 50px;
+  background: #e6e5a0;
+  font-size: clamp(26px, 7vw, 68px);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* Nubeisss*/
+.cloud {
+  position: absolute;
+  z-index: 2;
+  width: 120px;
+}
+
+
+.cloud img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.cloud-left {
+  top: 31%;
+  left: 10%;
+}
+
+.cloud-right {
+  top: 31%;
+  right: 5%;
+}
+
+/* Montaññis*/
+.montanha {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mountain {
+  position: absolute;
+  bottom: 12.5%;
+  width: 0;
+  height: 0;
+  border-left: 105px solid transparent;
+  border-right: 105px solid transparent;
+  border-bottom: 145px solid #b8ddc5;
+  filter: drop-shadow(1px 2px 2px #507d67);
+}
+
+.mountain-left {
+  left: -2%;
+  transform: scale(1.12);
+  border-bottom-color: #a9d9b8;
+}
+
+.mountain-center {
+  left: 15%;
+  bottom: 12.8%;
+  transform: scale(1.08);
+  border-bottom-color: #b9ddc7;
+}
+
+.mountain-right {
+  right: 3%;
+  bottom: 13.5%;
+  transform: scale(1.03);
+  border-bottom-color: #b5ddc4;
+}
+
+.menu {
+  position: absolute;
+  z-index: 6;
+  top: 54.3%;
+  left: 31.7%;
+  width: 40.5%;
+  min-height: 150px;
+  padding: 14px 6% 10px 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  border-radius: 70px;
+  background: #dedede;
+}
+
+.menu-button {
+  display: block;
+  width: fit-content;
+  color: #050505;
+  text-decoration: none;
+  font-size: clamp(17px, 3.5vw, 34px);
+  font-weight: 900;
+  line-height: 1.25;
+  white-space: nowrap;
+  transform-origin: left center;
+  transition:
+    transform 180ms ease,
+    color 180ms ease,
+    text-shadow 180ms ease;
+}
+
+.menu-button:hover {
+  color: #6b8f46;
+  transform: translateX(9px) scale(1.06);
+  text-shadow: 2px 2px 0 #c5c5c5;
+}
+
+/* motorcy mondiu*/
+.motorcycle {
+  position: absolute;
+  z-index: 7;
+  left: 1%;
+  bottom: 1%;
+  width: 190px;
+}
+.motorcycle img {
+  width: 130%;
+  height: auto;
+  display: block;
+}
+
+/*la calle*/
+.calle {
+  position: absolute;
+  z-index: 5;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 10%;
+  min-height: 54px;
+  border-top: 2px solid #e5c500;
+  background: #202020;
+}
+
+.road-line {
+  position: absolute;
+  top: 42%;
+  width: 10%;
+  height: 2px;
+  background: #e5c500;
+}
+
+.line-one { left: 28%; }
+.line-two { left: 45%; }
+.line-three { left: 66%; }
+.line-four { left: 83%; }
+
+@media (max-width: 650px) {
+  .game-screen {
+    min-height: 500px;
+  }
+
+  .title-main {
+    min-height: 115px;
+    border-radius: 28px;
+  }
+
+  .title-main h1 {
+    letter-spacing: -4px;
+  }
+
+  .menu {
+    min-height: 120px;
+    border-radius: 48px;
+    padding-left: 5%;
+  }
+
+  .cloud {
+    transform: scale(.65);
+  }
+
+  .mountain {
+    border-left-width: 75px;
+    border-right-width: 75px;
+    border-bottom-width: 105px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-button {
+    transition: none;
+  }
+}
